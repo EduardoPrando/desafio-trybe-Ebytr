@@ -8,21 +8,21 @@ const taskSchema = Joi.object({
 });
 
 const testedTaskErrorOne = {
-  name: '',
+  task: '',
 };
 
 const testedTaskErrorTwo = {
-  name: 'as',
+  task: 'as',
 };
 
 const validTestOne = {
-  name: 'Sinuca',
+  task: 'Sinuca',
 };
 
 const validResponse = {
   _id: 1,
   taskId: '61fc08f8f91762802a95516c',
-  name: 'Sinuca',
+  task: 'Sinuca',
 }
 
 
@@ -34,7 +34,7 @@ describe('Testing task controller:', () => {
 
       before(() => {
         req.body = {
-          name: validTestOne.name,
+          task: validTestOne.task,
         };
 
         res.status = sinon.stub().returns(res);
@@ -51,7 +51,7 @@ describe('Testing task controller:', () => {
 
         expect(res.status.calledWith(201)).to.be.true;
       });
-    })
-  })
-})
+    });
+  });
+});
 // createNewTaskController
