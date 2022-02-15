@@ -47,8 +47,10 @@ describe('Testing task controller:', () => {
       });
 
       it('should create a new task whit status 201', async () => {
-        await
-      })
+        await taskController.createNewTaskController(req, res);
+
+        expect(res.status.calledWith(201)).to.be.true;
+      });
     })
   })
 })
