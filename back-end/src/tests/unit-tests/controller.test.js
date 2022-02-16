@@ -1,7 +1,7 @@
 const Joi = require('@hapi/joi');
 const sinon = require('sinon');
 const { expect } = require('chai');
-const taskController = require;
+const taskController = require('../../controllers/task.controller');
 
 const taskSchema = Joi.object({
   task: Joi.string().min(3).required(),
