@@ -6,7 +6,7 @@ const OPTION = { useNewUrlParser: true, useUnifiedTopology: true };
 
 const getConnection = async () => {
   const URLMock = (await DBServer).getUri();
-  return MongoClient.connect(URLMock, OPTION)
+  return MongoClient.connect(URLMock, OPTION);
 }
 
 module.exports = { getConnection };

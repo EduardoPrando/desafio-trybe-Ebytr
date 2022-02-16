@@ -1,13 +1,15 @@
+const { createNewTaskService } = require('../services/task.service');
+const { created } = require('../utils/dictionary/statusCode');
+
 const createNewTaskController = async (req, res, next) => {
   try {
-    const { task } = req.body;
+    const { task, idTask, description } = req.body;
 
-    const newTask = await createNewTaskService(task);
+    const newTask = await createNewTaskService(task, idTask, description);
 
-    res.status(create).json(newTask);
+    res.status(created).json({ task, idTask, description });
 
   }catch (error) {
-    console.log('createNewTaskController', error.message);
     next(error);
   }
 };
