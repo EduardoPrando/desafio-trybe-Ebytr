@@ -1,26 +1,3 @@
- Bem-vindos ao To-Do Trybe EbyTr
-
-## Contexto
-
----
-
-Esse projeto foi desenvolvido no curso na Trybe para empresa fictícia [`EbyTr`](www.betrybe.com).
-
-A proposta era desenvolver uma aplicação backend e frontend de uma lista de tarefas.
-
-Os detalhes fornecidos para a aplicação foram:
-
-* Visualizar a lista de tarefas;
-  * Esta lista deve ser ordenável por ordem alfabética, data de criação ou por status;
-* Inserir uma nova tarefa na lista;
-* Remover uma tarefa da lista;
-* Atualizar uma tarefa da lista;
-* A tarefa deve possuir um status editável: pendente, em andamento ou pronto;
-
----
-
----
-
 ## Como instalar
 
 Pre-requisitos para rodar o projeto: 
@@ -42,7 +19,6 @@ Copie o ssh do projeto `git@github.com:EduardoPrando/desafio-trybe-Ebytr.git`
 
 ## Modo de desenvolvimento
 
----
 
 O projeto foi desenvolvido utilizando TDD, inicialmente com testes integração, e posteriormente foi implementado um teste unitários.
 
@@ -50,7 +26,6 @@ O projeto foi desenvolvido utilizando TDD, inicialmente com testes integração,
 
 ### Tecnologias
 
----
 
 Foi utilizado para o desenvolvimento desse projeto o NodeJS com Express para a criação básica, Mocha/Chai para a criação dos teste unitários e de integração.
 
