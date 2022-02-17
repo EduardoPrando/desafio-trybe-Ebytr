@@ -1,8 +1,8 @@
 Bem-vindos ao To-Do Trybe EbyTr
 
-## Contexto
-
 ---
+
+## Contexto
 
 Esse projeto foi desenvolvido no curso na Trybe para empresa fictícia [`EbyTr`](www.betrybe.com).
 
@@ -31,4 +31,3 @@ Ler README backend
 * Implementação de 100% dos testes em Frontend e Backend
 * Implementação CSS
 * Deplay na Versel
-
