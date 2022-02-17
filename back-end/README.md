@@ -1,50 +1,62 @@
-O prazo para a entrega da solução vai do recebimento do desafio até o dia 17/02 12h00.
-Todas as informações que você precisa saber estão endereçadas no desafio.
-Sobre a entrega:
-O código deve ser mantido na sua conta pessoal do GitHub, portanto crie um novo repositório público com o nome a sua escolha;
-Mantenha a última versão do código na branch principal (main);
-Ao finalizar o desenvolvimento, preencha este formulário, com algumas informações sobre a sua entrega, incluindo o link do seu repositório. Certifique se que o repositório está público e é acessível por qualquer pessoa!
+ Bem-vindos ao To-Do Trybe EbyTr
 
+## Contexto
 
-O Desafio
+---
 
-Contexto:
-A empresa Ebytr está passando por problemas de produtividade/controle porque as pessoas colaboradoras vêm tendo dificuldade na organização de suas tarefas individuais. Por esse motivo, a diretora de produto Carolina Bigonha decidiu implantar uma nova forma de organizar as tarefas.
-Você foi a pessoa contratada para desenvolver um sistema capaz de auxiliar as pessoas colaboradoras a se organizar e ter mais produtividade.
+Esse projeto foi desenvolvido no curso na Trybe para empresa fictícia [`EbyTr`](www.betrybe.com).
 
+A proposta era desenvolver uma aplicação backend e frontend de uma lista de tarefas.
 
-Na Ebytr o time de desenvolvimento utiliza a Stack MERN para criar suas aplicações. Foi combinado com a Ebytr que você utilizará essa mesma Stack para resolver o problema de organização e produtividade da empresa.
-Abaixo estão (i) os requisitos técnicos, (ii) as funcionalidades, (iii) critérios de avaliação do desafio e (iv) algumas dicas importantes.
-Requisitos técnicos:
-Front-End em React;
-Back-End em NodeJS, com MongoDB;
-Arquitetura em camadas;
-Funcionalidades:
-Visualizar a lista de tarefas;
+Os detalhes fornecidos para a aplicação foram:
 
-Esta lista deve ser ordenável por ordem alfabética, data de criação ou por status;
+#Visualizar a lista de tarefas;
+##Esta lista deve ser ordenável por ordem alfabética, data de criação ou por status;
+###Inserir uma nova tarefa na lista;
+##Remover uma tarefa da lista;
+##Atualizar uma tarefa da lista;
+##A tarefa deve possuir um status editável: pendente, em andamento ou pronto;
 
-Inserir uma nova tarefa na lista;
-Remover uma tarefa da lista;
-Atualizar uma tarefa da lista;
-A tarefa deve possuir um status editável: pendente, em andamento ou pronto;
-Critérios de avaliação
-Nosso time irá avaliar a sua entrega olhando, principalmente, para os itens abaixo:
-Atendimento aos requisitos técnicos e funcionais;
-Seu projeto deve rodar sem erros;
-Entendimento dos conceitos das camadas adotadas;
-Código e componentes reutilizados;
-Habilidade em escrever testes (mínimo 30% de cobertura);
-Boa legibilidade do código;
-Separação do front e backend;
-Mensagens de commits bem descritas e commits com um escopo nítido;
-Referências de códigos de terceiros;
-Instruções nítidas no README do projeto para setup e execução da aplicação e dos testes.
-Dicas importantes!
-Ter uma boa cobertura de testes Front e Back;
-Aplicar boas práticas de escrita de código;
-Documentação do projeto (README), que inclua:
-Passo a passo para instalar e executar o projeto. Incluindo instruções especiais para instalar dependências e/ou bancos de dados, se houver;
-Endereço da aplicação no Heroku, se houver (ou outro serviço de deployment);
-Ter um linter configurado;
-O projeto deverá ser entregue via repositório pessoal no GitHub (utilize boas práticas de criação/nomeação de branches, além de mensagens de commits bem descritas e commits com um escopo nítido).
+---
+
+---
+
+## Como instalar
+
+Pre-requisitos para rodar o projeto: 
+- mongoDB
+- NPM
+
+Copie o ssh do projeto `git@github.com:EduardoPrando/desafio-trybe-Ebytr.git`
+
+* Abra um terminal no seu computador e utilize os comandos a baixo na ordem que são apresentados:
+
+  * `git clone git@github.com:EduardoPrando/desafio-trybe-Ebytr.git`
+  * `cd desafio-trybe-Ebytr/back-end`
+  * `npm install`
+  * `npm start`
+
+  A aplicação está configurada para rodar na porta local 3000. Caso deseje utilizar outra porta utilize o arquivo `.env.example` para trocar para a porta desejada. Após a alteração renomeie o arquivo para `.env`
+
+---
+
+## Modo de desenvolvimento
+
+---
+
+O projeto foi desenvolvido utilizando TDD, inicialmente com testes integração, e posteriormente foi implementado um teste unitários.
+
+---
+
+### Tecnologias
+
+---
+
+Foi utilizado para o desenvolvimento desse projeto o NodeJS com Express para a criação básica, Mocha/Chai para a criação dos teste unitários e de integração.
+
+---
+
+## Cobertura de teste
+
+A atual cobertura de testes é de: 
+- `97.53%` das linhas;
