@@ -5,7 +5,7 @@ const DB_COLLECTION = 'task';
 const createNewTaskModule = async (task, idTask, description) => {
   const con = await connection();
   const { insertedId } = await con.collection(DB_COLLECTION).insertOne({ task, idTask, description })
-  return insertedId
+  return { task, idTask, description, _id: insertedId}
 };
 
 const findTaskByIdModule = async (idTask) => {

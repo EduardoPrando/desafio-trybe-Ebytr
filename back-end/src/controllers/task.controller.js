@@ -7,7 +7,7 @@ const createNewTaskController = async (req, res, next) => {
 
     const newTask = await createNewTaskService(task, idTask, description);
 
-    res.status(created).json({ task, idTask, description });
+    res.status(created).json(newTask);
 
   }catch (error) {
     next(error);
