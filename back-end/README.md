@@ -36,6 +36,7 @@ Foi utilizado para o desenvolvimento desse projeto o NodeJS com Express para a c
 A atual cobertura de testes é de: 
 - `97.53%` das linhas;
 
+![image test](https://github.com/EduardoPrando/desafio-trybe-Ebytr/blob/main/back-end/public/testcoverage.png)
 ---
 
 ## Próximos passos
