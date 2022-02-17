@@ -56,12 +56,18 @@ const errorDescription = {
 }
 
 describe('Unit: Task service tests:', () => {
+  let connectionMock;
 
   before(async () => {
+    connectionMock = await getConnection();
+    sinon.stub(MongoClient, 'connect').resolves(connectionMock);
+    await connectionMock.db('toDoEbyTr').dropDatabase();
+
     sinon.stub(TaskModel, 'createNewTaskModule').resolves(ResponseNewTask);
   });
   
   after(async () => {
+    await MongoClient.connect.restore();
     await TaskModel.createNewTaskModule.restore();
   });
   
@@ -71,6 +77,7 @@ describe('Unit: Task service tests:', () => {
 
       it('should return a object whit a task', async () => {
         const response = await createNewTaskService(task, idTask, description);
+
         expect(response).to.be.an('object');
         expect(response).to.deep.equal(ResponseNewTask);
       });
@@ -90,6 +97,7 @@ describe('Unit: Task service tests:', () => {
             expect(error.message).to.be.equal('Task already created')
           };
         });
+
         it('if task has insufficient characters, should return a message: status: 400, and message: "task" length must be at least 3 characters long', async () => {
           try {
             const { task, idTask, description } = errorTask.one;
@@ -102,6 +110,7 @@ describe('Unit: Task service tests:', () => {
             expect(error.message).to.be.equal('"task" length must be at least 3 characters long')
           };
         });
+
         it('if task not informed, should return a message: status: 400, and message: "task" is required', async () => {
           try {
             const { task, idTask, description } = errorTask.two;
@@ -115,6 +124,7 @@ describe('Unit: Task service tests:', () => {
           };
         });
       });
+
       describe('IdTask error:', () => {
         it('if idTask has wrong id format:, should return a message: status: 400, and message: "idTask" must be a number', async () => {
           try {
@@ -128,6 +138,7 @@ describe('Unit: Task service tests:', () => {
             expect(error.message).to.be.equal('"idTask" must be a number')
           };
         });
+
         it('if idTask not informed, should return a message: status: 400, and message: "idTask" is required', async () => {
           try {
             const { task, idTask, description } = errorId.two;
@@ -154,6 +165,7 @@ describe('Unit: Task service tests:', () => {
             expect(error.message).to.be.equal('"description" length must be at least 3 characters long')
           };
         });
+        
         it('if description not informed, should return a message: status: 400, and message: "description" is required', async () => {
           try {
             const { task, idTask, description } = errorDescription.two;

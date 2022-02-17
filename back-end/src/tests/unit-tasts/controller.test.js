@@ -7,14 +7,13 @@ const { createNewTaskController } = require('../../controllers/task.controller')
 
 const TaskService = require('../../services/task.service');
 const { taskConflict } = require('../../utils/dictionary/messages');
-const { conflict, created } = require('../../utils/dictionary/statusCode');
+const { conflict } = require('../../utils/dictionary/statusCode');
 
-const errorHandler = require('../../middleware/errorHandler');
 const errorHandlerUtils = require('../../utils/function/errorHandlerUtils');
 
 const ResponseNewTask = {
   task: 'Kart',
-  idTask: 2,
+  idTask: 1,
   description: 'a litle despription',
   _id: new ObjectId("61fc08f8f91762802a95515a")
 };
@@ -31,13 +30,13 @@ describe('Unit: Task controller tests:', () => {
         task: ResponseNewTask.task,
         idTask: ResponseNewTask.idTask,
         description: ResponseNewTask.description,
-      }
+      };
       
       connectionMock = await getConnection();
       sinon.stub(MongoClient, 'connect').resolves(connectionMock);
+      await connectionMock.db('toDoEbyTr').dropDatabase();
 
       res.status = sinon.stub().returns(res);
-
       sinon.stub(TaskService, 'createNewTaskService').resolves(ResponseNewTask);
     });
 
@@ -49,20 +48,20 @@ describe('Unit: Task controller tests:', () => {
     it('should create a new task whit status 201', async () => {
       await connectionMock.db('toDoEbyTr').dropDatabase();
 
-      await createNewTaskController(req, res, next)
+      await createNewTaskController(req, res, next);
 
-      expect(res.status.calledWith(201)).to.be.true
+      expect(res.status.calledWith(201)).to.be.true;
     });
 
     it('should expect a error 409', async () => {
       next = sinon.stub().throws(errorHandlerUtils(conflict, taskConflict));
 
       try {
-      await createNewTaskController(req, res, next)
+      await createNewTaskController(req, res, next);
         
       } catch (error) {
-        expect(error.status).to.be.equal(409)
-        expect(error.message).to.be.equal('Task already created')
+        expect(error.status).to.be.equal(409);
+        expect(error.message).to.be.equal('Task already created');
       };
     });
   });
