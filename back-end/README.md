@@ -10,12 +10,12 @@ A proposta era desenvolver uma aplicação backend e frontend de uma lista de ta
 
 Os detalhes fornecidos para a aplicação foram:
 
-#Visualizar a lista de tarefas;
-##Esta lista deve ser ordenável por ordem alfabética, data de criação ou por status;
-###Inserir uma nova tarefa na lista;
-##Remover uma tarefa da lista;
-##Atualizar uma tarefa da lista;
-##A tarefa deve possuir um status editável: pendente, em andamento ou pronto;
+* Visualizar a lista de tarefas;
+  * Esta lista deve ser ordenável por ordem alfabética, data de criação ou por status;
+* Inserir uma nova tarefa na lista;
+* Remover uma tarefa da lista;
+* Atualizar uma tarefa da lista;
+* A tarefa deve possuir um status editável: pendente, em andamento ou pronto;
 
 ---
 
@@ -60,3 +60,15 @@ Foi utilizado para o desenvolvimento desse projeto o NodeJS com Express para a c
 
 A atual cobertura de testes é de: 
 - `97.53%` das linhas;
+
+---
+
+## Próximos passos
+
+* Implementação de todas as rotas
+* Implementação de 100% dos testes
+* Deplay no Heroku
+* Implementação de transmissão de dados `in real time` através do SocketIO
+
+---
+
