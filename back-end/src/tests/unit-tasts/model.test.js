@@ -19,10 +19,11 @@ describe('Unit: Task model tests:', () => {
   before(async () => {
     connectionMock = await getConnection();
     sinon.stub(MongoClient, 'connect').resolves(connectionMock);
+    await connectionMock.db('toDoEbyTr').collection('task').drop();
   });
 
   after(async () => {
-    await connectionMock.db('toDoEbyTr').collection('task').drop();
+    await connectionMock.db('toDoEbyTr').dropDatabase();
     await MongoClient.connect.restore();
   });
 
@@ -43,7 +44,7 @@ describe('Unit: Task model tests:', () => {
 
   describe('findTaskByIdModule function', () => {
     it('should return null if don\'t find anything', async () => {
-      response = await findTaskByIdModule(2);
+      response = await findTaskByIdModule(4);
 
       expect(response).to.be.null;
     });
