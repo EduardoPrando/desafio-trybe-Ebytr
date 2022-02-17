@@ -20,7 +20,7 @@ const validData = {
   description: "a litle despription",
   };
 
-describe('Testing /POST task:', () => {
+describe('Integration: Testing /POST task:', () => {
   let response
   let connectionMock;
 
